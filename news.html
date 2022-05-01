@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The True News</title>
+    <link rel="stylesheet" href="news.css">
+</head>
+
+<body>
+    <div id="super">
+        <div id="date">26, sep 2002</div>
+        <div id="titlebar">&#9734 The True News </div>
+        <div id="sub">
+            <button id="signup">Sign-Up</button>
+            <button id="login">Login</button>
+        </div>
+    </div>
+    <!-- <div id="navbar"> -->
+        <ul id="itemsul">
+
+            <li id="Home" class="itemsli active">Home
+            </li>
+
+            <li id="Business" class="itemsli">Business
+            </li>
+
+            <li id="Entertainment" class="itemsli">Entertainment</li>
+
+            <li id="Health" class="itemsli">Health
+            </li>
+
+            <li id="Science" class="itemsli">Science
+            </li>
+
+            <li id="Sports" class="itemsli">Sports
+            </li>
+
+            <li id="Technology" class="itemsli">Technology
+            </li>
+
+        </ul>
+    <!-- </div> -->
+    <div id="base">
+
+        <div id="left">
+            <div id="title">
+                Home
+            </div>
+            <div id="list">
+                <div class="news">
+                    <img src="Chrysanthemum.jpg" class="imgl"></img>
+                    <div class="new">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste alias tempora dicta!
+                    </div>
+                </div>
+                <div class="news">
+                    <img src="Desert.jpg" class="imgl"></img>
+                    <div class="new">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum est illo et libero
+                        nobis. Modi, tempora saepe! Illum odit cupiditate laudantium itaque autem ad atque rerum ab
+                        distinctio iure. Id alias voluptatum modi sequi consequatur!
+                    </div>
+                </div>
+                
+                
+
+            </div>
+        </div>
+
+        <div id="right">
+            <div id="titleright">
+                International
+            </div>
+            <div id="listr">
+                <div class="newsint">
+                    <img src="backpic.jpg" class="rimg">
+                    <div class="rnews">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minima tempora obcaecatiLorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minima tempora obcaecatiLorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minima tempora obcaecatiLorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minima tempora obcaecati Lorem ipsum dolor sip amet, consectetur adipisicing elit. Temporibus minima tempora obcaecatiLorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minima tempora obcaecati .</div></img>
+                    
+                </div>
+
+            
+            
+                <div class="newsint">
+                    <img src="backpic.jpg"  class="rimg"></img>
+                    <div class="rnews">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet iste autem!</div>
+                </div>
+
+            
+            
+                <div class="newsint">
+                    <img src="backpic.jpg"  class="rimg"></img>
+                    <div class="rnews">lorem25</div>
+                </div>
+                <div class="newsint">
+                    <img src="backpic.jpg" class="rimg"></img>
+                    <div class="rnews">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minima tempora obcaecati unde natus officiis d</div>
+                </div>
+
+            
+            
+                <div class="newsint">
+                    <img src="backpic.jpg"  class="rimg"></img>
+                    <div class="rnews">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet iste autem!</div>
+                </div>
+
+            
+            
+                <div class="newsint">
+                    <img src="backpic.jpg"  class="rimg"></img>
+                    <div class="rnews">lorem25</div>
+                </div>
+                <div class="newsint">
+                    <img src="backpic.jpg" class="rimg"></img>
+                    <div class="rnews">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus minima tempora obcaecati </div>
+                </div>
+
+            
+            
+                <div class="newsint">
+                    <img src="backpic.jpg"  class="rimg"></img>
+                    <div class="rnews">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis eveniet iste autem!</div>
+                </div>
+
+            
+            
+                <div class="newsint">
+                    <img src="backpic.jpg"  class="rimg"></img>
+                    <div class="rnews">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos placeat quo deserunt officiis officia!</div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+<script src="news.js"></script>
+
+</html>
