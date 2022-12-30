@@ -1,4 +1,4 @@
-body{
+body {
   /* width: 100vw; */
   /* width:100%; */
   margin: 0;
@@ -18,11 +18,21 @@ body{
   overflow-x: auto;
   /* overflow-x:hidden; */
   /* height:100vh; */
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   width: 100vw;
   height: 100%;
   max-width: 100%;
+  color: white;
 }
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+body:hover {
+  cursor: pointer;
+}
+
 #super {
   display: flex;
   position: relative;
@@ -30,9 +40,9 @@ body{
   justify-content: space-between;
   align-items: center !important;
   /* width: 100vw; */
-  width:100%;
+  width: 100%;
   height: 15vh;
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(0, 0, 0);
   /* padding-left:1vw; */
   /* padding-right:1vw; */
   /* height: 10vh; */
@@ -44,13 +54,15 @@ body{
   background-color: darkblue;
   color: white;
 }
+
 #login:hover {
   background-color: darkblue;
   color: white;
 }
+
 #titlebar {
-  color: darkblue;
-  text-shadow: rgb(95, 95, 95);
+  color: white;
+  /* text-shadow: rgb(95, 95, 95); */
   display: flex;
   justify-content: center !important;
   justify-self: center !important;
@@ -64,7 +76,8 @@ body{
   align-items: center !important;
   justify-content: space-between;
   white-space: nowrap;
-  text-shadow: 3px 3px 5px #cccccc;
+  /* text-shadow: 3px 3px 5px #cccccc; */
+  background-color: rgb(0, 0, 0);
 }
 
 #date {
@@ -76,11 +89,12 @@ body{
   text-align: center;
   flex-direction: row;
   margin-left: 1vw;
-  color: darkblue;
+  color: white;
   font-size: 0.9rem;
   /* width: 29vw; */
   /* padding-left: 1vw; */
 }
+
 #sub {
   display: flex;
   position: relative;
@@ -92,6 +106,7 @@ body{
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   /* width: 30vw; */
 }
+
 /* #navbar {
   width:100%;
   display: flex;
@@ -105,38 +120,40 @@ body{
   position: relative;
   /* height:6vh; */
   /* color: white; */
-  width:100%;
+  width: 100%;
   list-style: none;
-  justify-items:space-evenly;
+  justify-items: space-evenly;
   grid-template-columns: repeat(7, 1fr);
   /* background-color: tomato; */
-  padding:0;
+  padding: 0;
   margin: 0;
   /* place-items:center; */
   /* align-items: center; */
   /* height: 6vh; */
   /* border-top: 1px solid grey;
   border-bottom: 1px solid grey; */
-  box-shadow: 0px 3px 5px #f1f1f1;
+  box-shadow: 0px 3px 5px #787878;
 }
+
 .itemsli {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 1vw
-  /* justify-content:center; */
-  /* font-size: 2vw; */
-  /* text-align:start; */
+    /* justify-content:center; */
+    /* font-size: 2vw; */
+    /* text-align:start; */
 }
+
 .active {
   /* text-shadow: 1px  1px rgb(126, 126, 255); */
   /* border-bottom: 2px solid white; */
   /* list-style: solid underline; */
   /* text-decoration: 2px underline; */
-  border: 2px solid darkblue;
+  border: 2px solid white;
   border-radius: 50vh;
   /* color: white; */
-  color: darkblue;
+  color: white;
   /* background-image: linear-gradient(to right,darkblue, white); */
 }
 
@@ -147,40 +164,46 @@ body{
 #signup {
   /* width: 7vw; */
   margin-right: 1vw;
-  border: 2px solid darkblue;
+  border: 1px solid white;
   padding: 2px 0px;
   border-radius: 3px;
   white-space: nowrap;
-  color: darkblue;
+  color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: italic;
+  background-color: black;
+  color: white;
 }
+
 #login {
   /* width: 7vw; */
   margin-right: 1vw;
-  border: 2px solid darkblue;
+  border: 1px solid white;
   padding: 2px 0px;
   border-radius: 3px;
-  color: darkblue;
+  color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: italic;
+  background-color: black;
+  color: white;
 }
 
 .news {
- 
-    /* background-color:salmon; */
-  width:100%;
+
+  /* background-color: #171616; */
+  width: 100%;
   /* border-radius: 10px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #dedede;
+  background-color: #151515;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px #b4b4b4;
+  box-shadow: 5px 5px 5px #3e3e3e;
 }
+
 #base {
   /* width: 100vw; */
-  width:100%;
+  width: 100%;
   display: grid;
   position: relative;
   grid-template-columns: 1fr 1fr 1fr;
@@ -190,7 +213,7 @@ body{
   /* background-image: linear-gradient(to bottom,darkblue,lightgrey); */
   /* background-color: blue; */
   /* grid-auto-flow: row; */
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(37, 37, 37);
   /* gap: 1vw; */
 }
 
@@ -198,21 +221,20 @@ body{
   color: black;
   grid-column: span 2;
   /* background-color: purple; */
-
   display: flex;
   flex-direction: column;
   /* grid-template-columns: 1fr; */
-  /* margin:1vw; */
+  /* margin: 1vw; */
   /* border-radius: 10px; */
   width: 100%;
   /* border-right: 1px solid grey; */
-  background-image: linear-gradient(to left, rgb(231, 231, 231), white);
+  background-image: linear-gradient(to left, rgb(0 0 0), black);
 }
 
 #title {
   /* margin: 1vw; */
-  background-color: white;
-  color: darkblue;
+  background-color: rgb(0, 0, 0);
+  color: white;
   display: flex;
   position: relative;
   align-items: center;
@@ -236,6 +258,7 @@ body{
     aspect-ratio: 1;
     border-radius: 8px; */
 }
+
 .new {
   /* border-radius: 8px;
     display: flex;
@@ -244,18 +267,22 @@ body{
     display: block; */
   margin: 2vw;
   /* background-color: lime; */
+  color: white;
+  text-decoration: none;
 }
-#right{
+
+#right {
   display: flex;
   flex-direction: column;
   position: relative;
   max-width: 100%;
   min-width: 100%;
-  background-image: linear-gradient(to right, rgb(231, 231, 231), white);
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(0, 0, 0));
 }
+
 #titleright {
-  background-color: white;
-  color: darkblue;
+  background-color: rgb(0, 0, 0);
+  color: white;
   display: flex;
   position: relative;
   align-items: center;
@@ -263,23 +290,26 @@ body{
   height: 6vh;
   /* border-radius: 8px; */
 }
+
 #listr {
   display: grid;
-  grid-auto-flow:row;
+  grid-auto-flow: row;
   grid-template-columns: 1fr;
-  /* background-color: blueviolet; */
+  background-color: black;
   place-items: center;
 }
+
 .newsint {
   display: flex;
   position: relative;
   width: calc(100%-2vw);
   flex-direction: column;
   margin: 1vw;
-  background-color: #dedede;
+  background-color: #272727;
   border-radius: 10px;
   box-shadow: 5px 5px 5px #b4b4b4;
 }
+
 .rimg {
   display: flex;
   position: relative;
@@ -290,6 +320,7 @@ body{
   border-radius: 10px;
   z-index: 2;
 }
+
 .rnews {
   padding: 1vw;
   width: calc(100%-2vw);
@@ -300,9 +331,10 @@ body{
   text-overflow: ellipsis;
 
   color: black;
-  background-color: #b4b4b400;
-  
-  
+  background-color: #00000000;
+
+  color: white;
+  text-decoration: none;
 }
 
 .imgl {
@@ -318,30 +350,35 @@ body{
 }
 
 @media (max-width: 769px) {
-  body{
+  body {
     font-size: 1.5em;
   }
-  #base{
+
+  #base {
     width: 100%;
     grid-template-columns: 1fr;
   }
-  #super{
-    flex-wrap:wrap;
+
+  #super {
+    flex-wrap: wrap;
     height: 100%;
     padding: 1vw;
   }
-  #list{
+
+  #list {
     place-self: center;
     /* width: calc(100%-40px); */
     width: 95%;
     grid-template-columns: 1fr;
   }
-  #news{
+
+  #news {
     margin: 20px;
   }
+
   /*----------------------------*/
 
-  .rnews{
+  .rnews {
     /* height: 50px; */
     width: auto;
     white-space: normal;
@@ -350,7 +387,8 @@ body{
     /* background-color: tomato; */
     border-radius: 10px;
   }
-  .newsint{
+
+  .newsint {
     display: flex;
     min-width: 300px;
     width: 300px;
@@ -360,27 +398,32 @@ body{
     /* justify-content: center; */
     height: 30vh;
   }
-  #left{
+
+  #left {
     border-right: 0px solid black;
     border-bottom: 1px solid grey;
-    background-image:linear-gradient(to bottom, white, rgb(231, 231, 231));
+    background-image: linear-gradient(to bottom, rgb(0, rgb(0, 0, 0)1, 231));
   }
-  #right{
-    width:100%;
+
+  #right {
+    width: 100%;
     background-image: none;
   }
+
   #titlebar {
     font-size: 2em;
   }
-  #listr{
-    width:100vw;
+
+  #listr {
+    width: 100vw;
     display: flex;
-    overflow-x:auto;
+    overflow-x: auto;
     margin: 1vw;
     align-items: flex-start;
   }
-  #itemsul{
+
+  #itemsul {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  
+
 }

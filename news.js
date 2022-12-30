@@ -142,7 +142,7 @@ function request(country, category) {
       let obj = JSON.parse(this.responseText);
 
       let content = obj.articles;
-      console.log(content);
+      // console.log(content);
       for (key in content) {
         let object = content[key];
         let card = document.createElement("a");
@@ -160,11 +160,11 @@ function request(country, category) {
         document.getElementById("list").children[key].appendChild(news1);
       }
       let stus = "ok";
-      console.log(obj);
-      console.log(stus);
+      // console.log(obj);
+      // console.log(stus);
     } else {
       let stus = "error";
-      console.log(stus);
+      // console.log(stus);
     }
     // console.clear();
   };
@@ -187,7 +187,7 @@ function request2(country, category) {
       let obj = JSON.parse(this.responseText);
 
       let content = obj.articles;
-      console.log(content);
+      // console.log(content);
       for (key in content) {
         let object = content[key];
         let card = document.createElement("a");
@@ -205,11 +205,11 @@ function request2(country, category) {
         document.getElementById("listr").children[key].appendChild(news1);
       }
       let stus = "ok";
-      console.log(obj);
-      console.log(stus);
+      // console.log(obj);
+      // console.log(stus);
     } else {
       let stus = "error";
-      console.log(stus);
+      // console.log(stus);
     }
     // console.clear();
   };
