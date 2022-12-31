@@ -118,15 +118,6 @@ Technology.addEventListener("click", function () {
 
   request("in", "technology");
 });
-
-// xhr.open("GET","new.txt",true);
-// let politics="Politics";
-
-//GET https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=API_KEY
-
-// xhr.open("GET",``,true);
-// let country="us";
-// category="general";
 request("in", "general");
 function request(country, category) {
   let xhr = new XMLHttpRequest();
@@ -142,7 +133,6 @@ function request(country, category) {
       let obj = JSON.parse(this.responseText);
 
       let content = obj.articles;
-      // console.log(content);
       for (key in content) {
         let object = content[key];
         let card = document.createElement("a");
@@ -151,7 +141,6 @@ function request(country, category) {
         document.getElementById("list").appendChild(card);
         let images = document.createElement("img");
         images.classList.add("imgl");
-        // images.src=window.URL.createObjectURL(object.urlToImage);
         images.setAttribute("src", object.urlToImage);
         let news1 = document.createElement("div");
         news1.innerHTML = object.description;
@@ -160,16 +149,11 @@ function request(country, category) {
         document.getElementById("list").children[key].appendChild(news1);
       }
       let stus = "ok";
-      // console.log(obj);
-      // console.log(stus);
     } else {
       let stus = "error";
-      // console.log(stus);
     }
-    // console.clear();
   };
   xhr.send();
-  // console.log(document.getElementById('list').children[5]);
 }
 request2("us", "general");
 
@@ -187,7 +171,6 @@ function request2(country, category) {
       let obj = JSON.parse(this.responseText);
 
       let content = obj.articles;
-      // console.log(content);
       for (key in content) {
         let object = content[key];
         let card = document.createElement("a");
@@ -196,7 +179,6 @@ function request2(country, category) {
         document.getElementById("listr").appendChild(card);
         let images = document.createElement("img");
         images.classList.add("rimg");
-        // images.src=window.URL.createObjectURL(object.urlToImage);
         images.setAttribute("src", object.urlToImage);
         let news1 = document.createElement("div");
         news1.innerHTML = object.description;
@@ -205,17 +187,54 @@ function request2(country, category) {
         document.getElementById("listr").children[key].appendChild(news1);
       }
       let stus = "ok";
-      // console.log(obj);
-      // console.log(stus);
     } else {
       let stus = "error";
-      // console.log(stus);
     }
-    // console.clear();
   };
   xhttp.send();
-  // console.log(document.getElementById('list').children[5]);
 }
-// setTimeout(() => {
-//   console.clear();
-// }, 5000);
+const theme = document.getElementById("theme");
+theme.addEventListener("click",()=>{
+  theme.classList.toggle("night");
+  theme.classList.toggle("light");
+})
+
+
+theme.addEventListener("click",()=>{
+  if(theme.classList.contains("light")){
+    document.body.style.backgroundColor= "white";
+    document.body.style.color="black";
+    const news= document.getElementsByClassName("news");
+    Array.from(news).forEach(element => {
+      element.style.backgroundColor="rgb(238 ,238, 238)";
+      element.style.color="black";
+    });
+    const newsint= document.getElementsByClassName("newsint");
+    Array.from(newsint).forEach(element => {
+      element.style.backgroundColor="rgb(238 ,238 ,238)";
+      element.style.color="black";
+    });
+    const rnews= document.getElementsByClassName("rnews");
+    Array.from(rnews).forEach(element => {
+      element.style.color="black";
+    });
+  }
+  if(theme.classList.contains("night")){
+    document.body.style.backgroundColor= "black";
+    document.body.style.color="white";
+    const news= document.getElementsByClassName("news");
+    Array.from(news).forEach(element => {
+      element.style.backgroundColor="#303030";
+      element.style.color="white";
+    });
+    const newsint= document.getElementsByClassName("newsint");
+    Array.from(newsint).forEach(element => {
+      element.style.backgroundColor="#303030";
+      element.style.color="white";
+    });
+    const rnews= document.getElementsByClassName("rnews");
+    Array.from(rnews).forEach(element => {
+      element.style.color="white";
+    });
+  }
+})
