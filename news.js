@@ -138,6 +138,7 @@ function request(country, category) {
         let card = document.createElement("a");
         card.classList.add("news");
         card.setAttribute("href", object.url);
+        card.setAttribute("target","_blank");
         document.getElementById("list").appendChild(card);
         let images = document.createElement("img");
         images.classList.add("imgl");
@@ -176,6 +177,7 @@ function request2(country, category) {
         let card = document.createElement("a");
         card.classList.add("newsint");
         card.setAttribute("href", object.url);
+        card.setAttribute("target","_blank");
         document.getElementById("listr").appendChild(card);
         let images = document.createElement("img");
         images.classList.add("rimg");
