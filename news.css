@@ -5,20 +5,76 @@ body {
   gap: 2vw 2vw;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-style: italic;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   grid-template-columns: 1fr;
-  position: absolute;
+  /* position: absolute; */
   overflow-y: auto;
-  overflow-x: auto;
+  /* overflow-x: auto; */
   top: 0px;
   filter: blur(10px);
   width: 100vw;
   height: 100%;
   max-width: 100%;
-  background-color: white;
-  color: black;
+  /* background-color: white; */
+  color: white;
   filter: saturate(1.2);
+  background-color: #0b0a1c;
+  font-weight: l;
+}
+.backdrop-light{
+  background-color:grey;
+  content: "";
+  /* width: 100vw; */
+  
+  position:absolute;
+  top: 0;
+  right: 0;
+  animation-name: blow;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  width: 100%;
+  overflow: hidden;
+}
+@keyframes blow {
+  from{
+    filter: opacity(0%);
+  }
+  to{
+    filter: opacity(100%);
+  }
+}
+.backdrop-dark{
+  background-color:black;
+  content: "";
+  /* width: 100vw; */
+  
+  position:absolute;
+  top: 0;
+  right: 0;
+  animation-name: blow2;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  width: 100%;
+  overflow: hidden;
+  /* display: none; */
+}
+@keyframes blow2 {
+  from{
+    filter: opacity(0%);
+  }
+  to{
+    filter: opacity(100%);
+  }
+}
+*{
+  box-sizing: border-box;
 }
 .bright{
   background-color: pink;
@@ -43,7 +99,8 @@ body:hover {
   justify-content: space-between;
   align-items: center !important;
   width: 100%;
-  height: 15vh;
+  height: 10vh;
+  padding: 1vw 1vw;
 }
 
 #signup:hover {
@@ -57,6 +114,7 @@ body:hover {
   width: 2.2vw;
   height: 2.2vw;
   margin-right: 2vw;
+  display: none;
 }
 .light{
   background-image: url(night.png);
@@ -95,6 +153,7 @@ body:hover {
   flex-direction: row;
   margin-left: 1vw;
   font-size: 0.9rem;
+  color: rgb(189 185 231);
 }
 
 #sub {
@@ -116,7 +175,7 @@ body:hover {
   grid-template-columns: repeat(7, 1fr);
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid #5149ad;
+  border-bottom: 2px solid #5149ad;
 }
 
 .itemsli {
@@ -124,15 +183,20 @@ body:hover {
   align-items: center;
   justify-content: center;
   margin: 1vw;
+  color:rgb(189 185 231);
 }
 .itemsli:hover{
-  background-color: rgb(125, 125, 125);
+  /* background-color: rgb(125, 125, 125);
+  border-radius: 10px; */
+  /* color: #5149ad; */
+  border: 2px solid #5149ad;
   border-radius: 10px;
 }
 
 .active {
-  border: 1px solid #5149ad;
-  border-radius: 50vh;
+  border: 2px solid #5149ad;
+  border-radius: 10px;
+  color: #5149ad;
 }
 
 /* .itemsli{
@@ -176,14 +240,22 @@ body:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(40 38 65);
   border-radius: 10px;
   color: black;
+  position: relative;
   /* box-shadow: 5px 5px 5px #3e3e3e; */
   /* border: 1px solid rgb(45, 45, 45); */
 }
 .news:hover{
   scale: 101%;
+}
+.blur{
+  background: red;
+  width:32%;
+  position: absolute;
+  height: 100%;
+  z-index: 10000;
 }
 #base {
   /* width: 100vw; */
@@ -225,6 +297,7 @@ body:hover {
   justify-content: center;
   height: 6vh;
   /* border-radius: 8px; */
+  color: rgb(189 185 231);
 }
 
 #list {
@@ -250,7 +323,7 @@ body:hover {
     white-space: pre-wrap;
     display: block; */
   margin: 2vw;
-  /* background-color: lime; */
+  color:rgb(189 185 231);
   /* color: white; */
   text-decoration: none;
 }
@@ -273,6 +346,7 @@ body:hover {
   justify-content: center;
   height: 6vh;
   /* border-radius: 8px; */
+  color: rgb(189 185 231);
 }
 
 #listr {
@@ -289,7 +363,7 @@ body:hover {
   width: calc(100%-2vw);
   flex-direction: column;
   margin: 1vw;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(40 38 65);
   border-radius: 10px;
   /* box-shadow: 5px 5px 5px #b4b4b4; */
   /* border: 1px solid rgb(45, 45, 45); */
@@ -306,6 +380,7 @@ body:hover {
   height: min-content;
   border-radius: 10px;
   z-index: 2;
+  image-rendering:-webkit-optimize-contrast;
 }
 
 .rnews {
@@ -322,7 +397,9 @@ body:hover {
   border-radius: 0px 0px 10px 10px;
   /* color: white; */
   text-decoration: none;
+  color:rgb(189 185 231);
 }
+
 
 .imgl {
   display: flex;
@@ -338,7 +415,8 @@ body:hover {
 
 @media (max-width: 769px) {
   body {
-    font-size: 1.3em;
+    font-size: 1em;
+    font-weight:400;
   }
   ::-webkit-scrollbar{
     width: 0px;
@@ -364,7 +442,7 @@ body:hover {
     display: contents;
     flex-wrap: wrap;
     height: 100%;
-    padding: 1vw;
+    padding: 10vw;
   }
 
   #list {
@@ -372,6 +450,7 @@ body:hover {
     /* width: calc(100%-40px); */
     width: 95%;
     grid-template-columns: 1fr;
+    gap: 3vw;
   }
 
   #news {
@@ -383,13 +462,22 @@ body:hover {
   .rnews {
     /* height: 50px; */
     width: auto;
+    height: 50vh;
     white-space: normal;
     /* overflow: hidden; */
     /* margin: 1vw; */
     /* background-color: tomato; */
     border-radius: 10px;
   }
-
+  .newsint::after{
+    content: "";
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #0b0a1c, transparent, transparent, transparent);
+    border-radius: 10px;
+  }
   .newsint {
     display: flex;
     min-width: 300px;
@@ -398,12 +486,11 @@ body:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
     /* justify-content: center; */
-    height: 55vh;
+    height: 50vh;
   }
 
   #left {
-    border-right: 0px solid black;
-    border-bottom: 1px solid grey;
+    /* border-right: 0px solid black; */
     /* background-image: linear-gradient(to bottom, rgb(0, rgb(0, 0, 0)1, 231)); */
   }
 
@@ -424,9 +511,12 @@ body:hover {
     align-items: flex-start;
   }
 
-  #itemsul {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  #itemsul{
+    overflow-x: auto;
+  } 
+	.itemsli{
+    padding: 0vw 2vw;
+	}
   #theme{
     width: 6.5vw;
     height: 6.5vw;

@@ -131,10 +131,13 @@ function request(country, category) {
   xhr.onload = function () {
     if ((this.status = 200)) {
       let obj = JSON.parse(this.responseText);
-
       let content = obj.articles;
-      for (key in content) {
-        let object = content[key];
+      // console.log(content);
+      for (let i=0;i<content.length;i++) {
+        let object = content[i];
+        
+        
+          // console.log(object);
         let card = document.createElement("a");
         card.classList.add("news");
         card.setAttribute("href", object.url);
@@ -142,12 +145,21 @@ function request(country, category) {
         document.getElementById("list").appendChild(card);
         let images = document.createElement("img");
         images.classList.add("imgl");
-        images.setAttribute("src", object.urlToImage);
+        if(object.urlToImage===null){
+          images.setAttribute("src", '/images/notfound.avif');
+        }
+        else{
+          images.setAttribute("src", object.urlToImage);
+        }
+        // images.setAttribute("src", object.urlToImage);
         let news1 = document.createElement("div");
-        news1.innerHTML = object.description;
         news1.classList.add("new");
-        document.getElementById("list").children[key].appendChild(images);
-        document.getElementById("list").children[key].appendChild(news1);
+        news1.innerHTML = object.description;
+        document.getElementById("list").children[i].appendChild(images);
+        document.getElementById("list").children[i].appendChild(news1);
+        
+        
+        
       }
       let stus = "ok";
     } else {
@@ -172,8 +184,9 @@ function request2(country, category) {
       let obj = JSON.parse(this.responseText);
 
       let content = obj.articles;
-      for (key in content) {
-        let object = content[key];
+      
+      for (let i=0;i<content.length;i++) {
+        let object = content[i];
         let card = document.createElement("a");
         card.classList.add("newsint");
         card.setAttribute("href", object.url);
@@ -181,12 +194,18 @@ function request2(country, category) {
         document.getElementById("listr").appendChild(card);
         let images = document.createElement("img");
         images.classList.add("rimg");
-        images.setAttribute("src", object.urlToImage);
+        if(object.urlToImage===null){
+          images.setAttribute("alt", '/images/notfound.avif');
+        }
+        else{
+          images.setAttribute("src", object.urlToImage);
+        }
         let news1 = document.createElement("div");
-        news1.innerHTML = object.description;
         news1.classList.add("rnews");
-        document.getElementById("listr").children[key].appendChild(images);
-        document.getElementById("listr").children[key].appendChild(news1);
+        news1.innerHTML = object.description;
+        document.getElementById("listr").children[i].appendChild(images);
+        document.getElementById("listr").children[i].appendChild(news1);
+        
       }
       let stus = "ok";
     } else {
@@ -196,14 +215,22 @@ function request2(country, category) {
   xhttp.send();
 }
 const theme = document.getElementById("theme");
+const backdrop=document.getElementById("backdrop");
 theme.addEventListener("click",()=>{
-  theme.classList.toggle("night");
-  theme.classList.toggle("light");
+  if(backdrop.classList.contains("backdrop-dark")){
+    backdrop.classList.remove("backdrop-dark");
+    backdrop.classList.add("backdrop-light");
+  }
+  else if(backdrop.classList.contains("backdrop-light")){
+    backdrop.classList.remove("backdrop-dark");
+    backdrop.classList.add("backdrop-dark");
+  }
 })
 
 
-theme.addEventListener("click",()=>{
+document.body.addEventListener("load",()=>{
   if(theme.classList.contains("light")){
+    console.log("light");
     document.body.style.backgroundColor= "white";
     document.body.style.color="black";
     const news= document.getElementsByClassName("news");
@@ -220,8 +247,13 @@ theme.addEventListener("click",()=>{
     Array.from(rnews).forEach(element => {
       element.style.color="black";
     });
+    document.getElementById("title").style.color="black";
+    theme.classList.toggle("light");
+    theme.classList.toggle("night");
+    
   }
   if(theme.classList.contains("night")){
+    console.log("night");
     document.body.style.backgroundColor= "black";
     document.body.style.color="white";
     const news= document.getElementsByClassName("news");
@@ -238,5 +270,8 @@ theme.addEventListener("click",()=>{
     Array.from(rnews).forEach(element => {
       element.style.color="white";
     });
+    document.getElementById("title").style.color="white";
+    theme.classList.toggle("night");
+    theme.classList.toggle("light");
   }
 })
