@@ -129,44 +129,46 @@ function request(country, category) {
   );
   xhr.getResponseHeader("Content-type", "application/json");
   xhr.onload = function () {
-    if ((this.status = 200)) {
+    if (this.status === 200) {
       let obj = JSON.parse(this.responseText);
       let content = obj.articles;
-      // console.log(content);
-      for (let i=0;i<content.length;i++) {
+      let list = document.getElementById("list");
+  
+      for (let i = 0; i < content.length; i++) {
         let object = content[i];
-        
-        
-          // console.log(object);
+        if (!content[i].urlToImage || !content[i].description ) {
+          continue;
+        }
+        console.log(content);
         let card = document.createElement("a");
         card.classList.add("news");
         card.setAttribute("href", object.url);
-        card.setAttribute("target","_blank");
-        document.getElementById("list").appendChild(card);
+        card.setAttribute("target", "_blank");
+        list.appendChild(card);
+  
         let images = document.createElement("img");
         images.classList.add("imgl");
-        if(object.urlToImage===null){
+        if (object.urlToImage === null) {
           images.setAttribute("src", '/images/notfound.avif');
-        }
-        else{
+        } else {
           images.setAttribute("src", object.urlToImage);
         }
-        // images.setAttribute("src", object.urlToImage);
+        card.appendChild(images);
+  
         let news1 = document.createElement("div");
         news1.classList.add("new");
         news1.innerHTML = object.description;
-        document.getElementById("list").children[i].appendChild(images);
-        document.getElementById("list").children[i].appendChild(news1);
-        
-        
-        
+        card.appendChild(news1);
       }
+  
       let stus = "ok";
-    } else {
+    } 
+    else {
       let stus = "error";
     }
   };
   xhr.send();
+  
 }
 request2("us", "general");
 
@@ -180,13 +182,17 @@ function request2(country, category) {
   );
   xhttp.getResponseHeader("Content-type", "application/json");
   xhttp.onload = function () {
-    if ((this.status = 200)) {
+    if ((this.status === 200)) {
       let obj = JSON.parse(this.responseText);
 
       let content = obj.articles;
       
       for (let i=0;i<content.length;i++) {
         let object = content[i];
+        if (!content[i].urlToImage || !content[i].description ) {
+          continue;
+        }
+        
         let card = document.createElement("a");
         card.classList.add("newsint");
         card.setAttribute("href", object.url);
@@ -208,7 +214,8 @@ function request2(country, category) {
         
       }
       let stus = "ok";
-    } else {
+    } 
+    else {
       let stus = "error";
     }
   };
